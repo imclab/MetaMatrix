@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script type="text/javascript" src="mtxConstructors.js"></script>
+<script type="text/javascript">
+    
+
+var _canvas;
+function loadMatrix(theJson) {
+    _canvas = document.getElementById('canvas');
+    var matrix = new mtxMatrix();
+    matrix.revive(theJson);
+    matrix.draw(_canvas);
+}
+function init() {
+    alert('uh-oh');
+    _canvas = document.getElementById('canvas');
+    
+//    var line2 = new mtxLine(70, 40, 170, 170);
+//    line2.color = 'purple';
+//    line2.draw(_canvas);
+    var matrix = new mtxMatrix(.1);
+    //console.log(JSON.stringify(this));
+    var jsonText = JSON.stringify(matrix,null,4);
+    var tempDiv = document.getElementById('temp');
+    tempDiv.innerHTML = jsonText;
+    //document.write(jsonText);
+    console.log(jsonText);
+    matrix.draw(_canvas);
+}
+</script>
+</head>
+
+<body >
+hi
+<pre><div id='temp'></div></pre>
+hi
+<canvas id="canvas" width="900"height="600" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
+
+</body>
+<script type='application/javascript' src='MatrixData.json'>
+</script>
+</html>
